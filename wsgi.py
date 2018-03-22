@@ -1,12 +1,12 @@
 from flask import Flask
 import requests
-app = Flask(__name__)
+application = Flask(__name__)
 
-@app.route("/")
+@application.route("/")
 def hello():
     return "Hello World!"
 
-@app.route('/requeststest')
+@application.route('/requeststest')
 def requeststest():
     #logging.info('*******import requests*************')
     return requests.get("http://httpbin.org/get",
@@ -14,4 +14,4 @@ def requeststest():
 
 
 if __name__ == "__main__":
-    app.run()
+    application.run()
