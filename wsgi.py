@@ -16,7 +16,7 @@ def requeststest():
     return Response(result.content, headers={'Access-Control-Allow-Origin': '*'})
 
 
-@app.route('/obd/<path:path>', methods=['GET','POST'])
+@application.route('/obd/<path:path>', methods=['GET','POST'])
 def proxy(path):
     #https://cloud.google.com/appengine/docs/python/urlfetch/
     #from google.appengine.api import urlfetch
