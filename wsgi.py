@@ -1,8 +1,8 @@
 from flask import Flask
 import requests
-application = Flask(__name__)
+app = Flask(__name__)
 
-@application.route("/")
+@app.route("/")
 def hello():
     return "Hello World!"
 
@@ -14,4 +14,4 @@ def requeststest():
 
 
 if __name__ == "__main__":
-    application.run()
+    app.run()
