@@ -12,7 +12,7 @@ def requeststest():
     #logging.info('*******import requests*************')
     result = requests.post("http://httpbin.org/post",
     					data={'great job': 'super'},
-    					headers={'Referer': 'https://pamyat-naroda.ru/', 'User-Agent': 'Mozilla'})  # verify=False not working
+    					headers={'Referer': 'https://pamyat-naroda.ru/', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko'})  # verify=False not working
     return Response(result.content, headers={'Access-Control-Allow-Origin': '*'})
 
 
@@ -33,7 +33,7 @@ def proxy(path):
     #https://cloud.google.com/appengine/docs/standard/python/issue-requests
     result = requests.post(url=url,
         data=request.data,
-        headers={'Referer': 'https://pamyat-naroda.ru/', 'User-Agent': 'Mozilla'})
+        headers={'Referer': 'https://pamyat-naroda.ru/', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko'})
 
 #    if result.status_code == 200:
 #      doSomethingWithResult(result.content)
@@ -42,3 +42,4 @@ def proxy(path):
 
 if __name__ == "__main__":
     application.run()
+	#app.run(host='0.0.0.0', port=8080)
