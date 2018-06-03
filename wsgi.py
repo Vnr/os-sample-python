@@ -31,13 +31,14 @@ def proxy(path):
     url = 'https://cdn.pamyat-naroda.ru/ind/' + path
     
     #https://cloud.google.com/appengine/docs/standard/python/issue-requests
-    result = requests.post(url=url,
-        data=request.data,
-        headers={'Referer': 'https://pamyat-naroda.ru/', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko'})
-
+    try:
+	    result = requests.post(url=url,
+	        data=request.data,
+	        headers={'Referer': 'https://pamyat-naroda.ru/', 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0'})
+	except Exception as e:
+		return Response(e.message)
 #    if result.status_code == 200:
 #      doSomethingWithResult(result.content)
-
     return Response(result.content, headers={'Access-Control-Allow-Origin': '*'})
 
 if __name__ == "__main__":
