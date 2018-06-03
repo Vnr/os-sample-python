@@ -30,7 +30,7 @@ def proxy(path):
     #https://cdn.pamyatnaroda.mil.ru
     #url = 'https://cdn.pamyat-naroda.ru/ind/' + path
     url = 'https://httpbin.org/get?' + path
-    result = requests.get(url=url)
+    #result = requests.get(url=url)
     
     #https://cloud.google.com/appengine/docs/standard/python/issue-requests
 #    try:
@@ -41,8 +41,9 @@ def proxy(path):
 #        return Response(e.message)
 #    if result.status_code == 200:
 #      doSomethingWithResult(result.content)
-    return Response(url + '\n' + result.status_code + '\n' + result.content, headers={'Access-Control-Allow-Origin': '*'})
+#    return Response(url + '\n' + result.status_code + '\n' + result.content, headers={'Access-Control-Allow-Origin': '*'})
 #    return Response(result.content, headers={'Access-Control-Allow-Origin': '*'})
+    return Response("good", headers={'Access-Control-Allow-Origin': '*'})
 
 if __name__ == "__main__":
     application.run()
