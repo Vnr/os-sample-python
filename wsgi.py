@@ -28,7 +28,8 @@ def proxy(path):
     # password = request.form.get('password')
     
     #https://cdn.pamyatnaroda.mil.ru
-    url = 'https://cdn.pamyat-naroda.ru/ind/' + path
+    #url = 'https://cdn.pamyat-naroda.ru/ind/' + path
+    url = 'https://httpbin.org/get?' + path
     
     #https://cloud.google.com/appengine/docs/standard/python/issue-requests
     try:
