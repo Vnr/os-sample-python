@@ -30,14 +30,15 @@ def proxy(path):
     #https://cdn.pamyatnaroda.mil.ru
     #url = 'https://cdn.pamyat-naroda.ru/ind/' + path
     url = 'https://httpbin.org/get?' + path
+    result = requests.get(url=url)
     
     #https://cloud.google.com/appengine/docs/standard/python/issue-requests
-    try:
-        result = requests.get(url=url,
-            #data=request.data,
-            headers={'Referer': 'https://pamyat-naroda.ru/', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0'})
-    except Exception as e:
-        return Response(e.message)
+#    try:
+#        result = requests.get(url=url,
+#            #data=request.data,
+#            headers={'Referer': 'https://pamyat-naroda.ru/', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0'})
+#    except Exception as e:
+#        return Response(e.message)
 #    if result.status_code == 200:
 #      doSomethingWithResult(result.content)
     return Response(url + '\n' + result.status_code + '\n' + result.content, headers={'Access-Control-Allow-Origin': '*'})
