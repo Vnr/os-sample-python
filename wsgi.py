@@ -42,8 +42,8 @@ def proxy(path):
 #    if result.status_code == 200:
 #      doSomethingWithResult(result.content)
 #    return Response(url + '\n' + result.status_code + '\n' + result.content, headers={'Access-Control-Allow-Origin': '*'})
-#    return Response(result.content, headers={'Access-Control-Allow-Origin': '*'})
-    return Response(url, headers={'Access-Control-Allow-Origin': '*'})
+    return Response(result.content, headers={'Access-Control-Allow-Origin': '*', 'URL':url})
+#    return Response(url, headers={'Access-Control-Allow-Origin': '*'})
 
 if __name__ == "__main__":
     application.run()
