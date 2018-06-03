@@ -43,7 +43,7 @@ def proxy(path):
 #      doSomethingWithResult(result.content)
 #    return Response(url + '\n' + result.status_code + '\n' + result.content, headers={'Access-Control-Allow-Origin': '*'})
 #    return Response(result.content, headers={'Access-Control-Allow-Origin': '*'})
-    return Response("good", headers={'Access-Control-Allow-Origin': '*'})
+    return Response(url, headers={'Access-Control-Allow-Origin': '*'})
 
 if __name__ == "__main__":
     application.run()
